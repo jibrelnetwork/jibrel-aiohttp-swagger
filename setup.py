@@ -32,7 +32,7 @@ setup(
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='jibrel_aiohttp_swagger',
-    name='jibrel-aiohttp-swagger',
+    name='jibrel_aiohttp_swagger',
     packages=find_packages(include=['jibrel_aiohttp_swagger']),
     setup_requires=setup_requirements,
     test_suite='tests',
