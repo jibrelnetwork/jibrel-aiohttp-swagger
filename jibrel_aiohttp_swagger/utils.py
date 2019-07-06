@@ -1,5 +1,5 @@
 import functools
-from urllib.parse import urljoin
+from string import Template
 from datetime import datetime, timedelta
 from os.path import dirname
 from pathlib import Path
@@ -47,7 +47,7 @@ def load_api_index_html(*, static_url: str, template_path: str, spec_url: str,
         content = fp.read()
     if not static_url.endswith('/'):
         static_url = ''.join([static_url, '/'])
-    return content.format(
+    return Template(content).substitute(
         SPEC_URL=spec_url,
         API_TITLE=api_title,
         STATIC_URL=static_url,
