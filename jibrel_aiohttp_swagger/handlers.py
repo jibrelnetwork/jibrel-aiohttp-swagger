@@ -1,6 +1,6 @@
 from aiohttp.web import Request, Response, json_response
 
-from .utils import load_spec_file, load_api_index_html, read_version, inject_version
+from .utils import load_spec_file, load_api_index_html, read_version
 
 
 async def spec_handler(request: Request, spec_path: str, version_file_path = None):
