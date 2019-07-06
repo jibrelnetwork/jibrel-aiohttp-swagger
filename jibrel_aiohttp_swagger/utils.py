@@ -37,7 +37,7 @@ def timed_cache(**timedelta_kwargs):
 def load_spec_file(spec_path):
     with open(spec_path, 'r') as fp:
         content = yaml.load(fp)
-    return json.dumps(content)
+    return content
 
 
 @timed_cache(seconds=1)

@@ -1,8 +1,6 @@
-from urllib.parse import urljoin
+from aiohttp.web import Request, Response, json_response
 
-from aiohttp.web import Request, Response
-
-from .utils import load_spec_file, load_api_index_html, read_version
+from .utils import load_spec_file, load_api_index_html, read_version, inject_version
 
 
 async def spec_handler(request: Request, spec_path: str, version_file_path = None):
@@ -11,7 +9,7 @@ async def spec_handler(request: Request, spec_path: str, version_file_path = Non
         version = read_version(version_file_path)
         if version:
             json_content['info']['version'] = version
-    return Response(text=json_content, content_type="application/json")
+    return json_response(json_content)
 
 
 async def home_handler(request: Request, *, static_url, template_path, spec_url, api_title):
