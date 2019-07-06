@@ -13,7 +13,7 @@ from .handlers import spec_handler, home_handler
 from .utils import get_static_path
 
 
-DEFAULT_TEMPLATE = str(Path(dirname(__file__)) / 'static' / 'index.html')
+DEFAULT_TEMPLATE = str(Path(dirname(__file__)) / 'templates' / 'index.html')
 
 DEFAULT_TITLE = "Swagger UI"
 
