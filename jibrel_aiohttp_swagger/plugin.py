@@ -26,7 +26,8 @@ def setup_swagger(app: Application,
                   serve_static=True,
                   static_url="/api/doc/static",
                   template_path=DEFAULT_TEMPLATE,
-                  api_title=DEFAULT_TITLE):
+                  api_title=DEFAULT_TITLE,
+                  version_file_path=None):
     if spec_uri is None:
         spec_uri = urljoin(api_root, "swagger.json")
 
@@ -39,7 +40,9 @@ def setup_swagger(app: Application,
     app.router.add_get(api_root, home_handler_instance)
 
     # serve spec json
-    spec_handler_instance = partial(spec_handler, spec_path=spec_path)
+    spec_handler_instance = partial(
+        spec_handler, spec_path=spec_path, version_file_path=version_file_path
+    )
     app.router.add_get(spec_uri, spec_handler_instance)
 
     if serve_static:
