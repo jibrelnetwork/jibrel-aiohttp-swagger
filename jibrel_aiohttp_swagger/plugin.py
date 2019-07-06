@@ -44,4 +44,4 @@ def setup_swagger(app: Application,
 
     if serve_static:
         # add static handler
-        app.router.add_static(static_url, get_static_path)
+        app.router.add_static(static_url, get_static_path())
