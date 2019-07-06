@@ -16,4 +16,4 @@ async def home_handler(request: Request, *, static_url, template_path, spec_url,
         template_path=template_path,
         spec_url=spec_url,
         api_title=api_title,
-    ))
+    ), content_type='text/html')
