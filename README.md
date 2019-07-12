@@ -1,6 +1,13 @@
-# aiohttp swagger plugin
+# Jibrel aiohttp swagger plugin
 
-asd
+Minimal aiohttp swagger UI plugin.
+
+Features:
+
+* render swagger UI
+* add spec endpoint and serve provided yaml for UI
+* serve swagger UI static
+* optional spec version substitution from file content
 
 ## Install
 
