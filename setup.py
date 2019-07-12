@@ -30,6 +30,7 @@ setup(
     description="Plugin for aiohttp with swagger support a",
     install_requires=requirements,
     long_description=readme + '\n\n' + history,
+    long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='jibrel_aiohttp_swagger',
     name='jibrel_aiohttp_swagger',
