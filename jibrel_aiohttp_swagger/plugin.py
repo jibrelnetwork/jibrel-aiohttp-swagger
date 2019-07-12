@@ -28,6 +28,19 @@ def setup_swagger(app: Application,
                   template_path=DEFAULT_TEMPLATE,
                   api_title=DEFAULT_TITLE,
                   version_file_path=None):
+    """Setup swagger UI endpoints.
+
+    :param app: application to install swagger endpoints to
+    :param spec_path: spec yaml path
+    :param api_root: custom base api url
+    :param spec_uri: custom spec url
+    :param serve_static: serve static using `router.add_static` (by default)
+    :param static_url: static base url
+    :param template_path: template file path
+    :param api_title: api title
+    :param version_file_path: version file path to substitute version in spec
+    :return:
+    """
     if spec_uri is None:
         spec_uri = urljoin(api_root, "swagger.json")
 

@@ -53,6 +53,7 @@ def load_api_index_html(*, static_url: str, template_path: str, spec_url: str,
         STATIC_URL=static_url,
     )
 
+
 @timed_cache(seconds=1)
 def read_version(file_path):
     with open(file_path) as fp:
